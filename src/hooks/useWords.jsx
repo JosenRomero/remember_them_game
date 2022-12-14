@@ -46,6 +46,7 @@ export const useWords = () => {
   }, [index])
 
   return {
+    words,
     word,
     showingWords
   }
