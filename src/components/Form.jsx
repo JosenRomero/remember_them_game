@@ -14,6 +14,7 @@ const Form = ({handleResponse, handleInput, arr}) => {
                 onChange={(e) => handleInput(e)}
                 placeholder={`Palabra número ${i + 1}`}
                 className="bg-white border text-gray-700 rounded py-2 px-3 shadow"
+                required
               />
             </div>
           );

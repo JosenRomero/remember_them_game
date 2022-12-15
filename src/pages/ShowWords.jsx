@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useWords } from '../hooks/useWords'
 import Form from '../components/Form'
+import { checkingResponse } from '../utils/utils'
 
 const ShowWords = () => {
   
@@ -9,7 +10,8 @@ const ShowWords = () => {
 
   const handleResponse = (event) => {
     event.preventDefault();
-    console.log(response)
+    let { incorrectWord, win } = checkingResponse(words, response);
+    console.log(incorrectWord, win)
   }
 
   const handleInput = ({target: {name, value}}) => {
