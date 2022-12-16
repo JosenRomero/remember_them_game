@@ -3,7 +3,7 @@ import { useWords } from '../hooks/useWords'
 import Form from '../components/Form'
 import { checkingResponse } from '../utils/utils'
 
-const ShowWords = () => {
+const PlayPage = () => {
   
   const { words, word, showingWords } = useWords();
   const [response, setResponse] = useState({});
@@ -35,4 +35,4 @@ const ShowWords = () => {
 
 }
 
-export default ShowWords
+export default PlayPage

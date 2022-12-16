@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from '../components/Layout'
 import HomePage from '../pages/HomePage'
-import ShowWords from '../pages/ShowWords'
+import PlayPage from '../pages/PlayPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
 const AppRouter = () => {
@@ -11,7 +11,7 @@ const AppRouter = () => {
       <Layout>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/play" element={<ShowWords />} />
+          <Route exact path="/play" element={<PlayPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
