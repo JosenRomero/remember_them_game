@@ -3,7 +3,7 @@ import { useWords } from '../hooks/useWords'
 import Form from '../components/Form'
 import { checkingResponse } from '../utils/utils'
 
-const ShowAndResponse = () => {
+const ShowAndResponse = ({ result }) => {
 
   const { words, word, showingWords } = useWords();
   const [response, setResponse] = useState({});
@@ -11,7 +11,7 @@ const ShowAndResponse = () => {
   const handleResponse = (event) => {
     event.preventDefault();
     let { incorrectWord, win } = checkingResponse(words, response);
-    console.log(incorrectWord, win)
+    result({ win, words, incorrectWord });
   }
 
   const handleInput = ({target: {name, value}}) => {
