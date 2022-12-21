@@ -5,3 +5,5 @@ export const words = [
   "fresa",
   "pera"
 ]
+
+export const oneWord = "computadora";

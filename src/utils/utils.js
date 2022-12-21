@@ -1,4 +1,4 @@
-import { words } from '../data'
+import { words, oneWord } from '../data'
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
@@ -9,7 +9,11 @@ const iqualWords = (str1, str2) => str1 === str2.toLowerCase().normalize("NFD").
 export const getRandomWords = (number_of_words) => {
 
   return [...Array(number_of_words).fill('')]
-    .map(() => getRandomWord())
+    .reduce((t) => {
+      let randomWord = getRandomWord();
+      (t[t.length-1] === randomWord) ? t.push(oneWord) : t.push(randomWord)
+      return t
+    }, [])
     
 }
 
