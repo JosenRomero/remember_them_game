@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { getRandomWords } from '../utils/utils'
+import { UserContext } from '../context/UserContext'
 
 export const useWords = () => {
+
+  const { numberOfWords } = useContext(UserContext);
 
   const [words, setWords] = useState([]);
   const [word, setWord] = useState(null);
@@ -12,7 +15,7 @@ export const useWords = () => {
 
     if(words.length === 0 && word === null) {
 
-      let items = getRandomWords(3);
+      let items = getRandomWords(numberOfWords);
       items.push("");
       setWords(items);
       setWord(items[0]);
