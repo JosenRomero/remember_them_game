@@ -1,4 +1,5 @@
 import { words, oneWord } from '../data'
+import { INITIAL_LEVEL, INITIAL_NUMBER_OF_WORDS } from './CONSTANTS'
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
@@ -29,5 +30,21 @@ export const checkingResponse = (arr, objResponse) => {
   }
 
   return { incorrectWord, win }
+
+}
+
+export const checkingCurrentData = () => {
+  
+  let currentLevel = localStorage.getItem('level');
+  let currentNumberOfWords = localStorage.getItem('numberOfWords');
+
+  if(currentLevel === null) {
+    localStorage.setItem('level', JSON.stringify(INITIAL_LEVEL));
+    localStorage.setItem('numberOfWords', JSON.stringify(INITIAL_NUMBER_OF_WORDS));
+    currentLevel = INITIAL_LEVEL;
+    currentNumberOfWords = INITIAL_NUMBER_OF_WORDS;
+  }
+
+  return { currentLevel, currentNumberOfWords }
 
 }

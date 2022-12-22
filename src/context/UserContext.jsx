@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext } from 'react';
 import { INITIAL_LEVEL, INITIAL_NUMBER_OF_WORDS, TOTAL_LEVELS } from '../utils/CONSTANTS'
+import { checkingCurrentData } from '../utils/utils'
 
 export const UserContext = createContext()
 
@@ -10,25 +11,12 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
 
-    checkingCurrentData();
-
-  }, [])
-
-  const checkingCurrentData = () => {
-    let currentLevel = localStorage.getItem('level');
-    let currentNumberOfWords = localStorage.getItem('numberOfWords');
-
-    if(currentLevel === null) {
-      localStorage.setItem('level', JSON.stringify(INITIAL_LEVEL));
-      localStorage.setItem('numberOfWords', JSON.stringify(INITIAL_NUMBER_OF_WORDS));
-      currentLevel = INITIAL_LEVEL;
-      currentNumberOfWords = INITIAL_NUMBER_OF_WORDS;
-    }
+    let { currentLevel, currentNumberOfWords } = checkingCurrentData();
 
     setLevel(JSON.parse(currentLevel));
     setNumberOfWords(JSON.parse(currentNumberOfWords));
 
-  }
+  }, [])
 
   const nextLevel = () => {
 
