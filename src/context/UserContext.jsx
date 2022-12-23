@@ -6,6 +6,7 @@ export const UserContext = createContext()
 
 export const UserProvider = ({ children }) => {
 
+  const [ lastLevelCompleted, setLastLevelCompleted ] = useState(false);
   const [ level, setLevel ] = useState(INITIAL_LEVEL);
   const [ numberOfWords, setNumberOfWords] = useState(INITIAL_NUMBER_OF_WORDS);
 
@@ -16,7 +17,14 @@ export const UserProvider = ({ children }) => {
     setLevel(JSON.parse(currentLevel));
     setNumberOfWords(JSON.parse(currentNumberOfWords));
 
+    checkingLastLevelCompleted();
+
   }, [])
+
+  const checkingLastLevelCompleted = () => {
+    let value = localStorage.getItem('lastLevelCompleted');
+    if(value !== null) setLastLevelCompleted(JSON.parse(value));
+  }
 
   const nextLevel = () => {
 
@@ -32,11 +40,16 @@ export const UserProvider = ({ children }) => {
       }
 
     }
+    
+    if(level === TOTAL_LEVELS) {
+      localStorage.setItem('lastLevelCompleted', JSON.stringify(true));
+      setLastLevelCompleted(true);
+    }
 
   }
 
   return (
-    <UserContext.Provider value={{ level, nextLevel, numberOfWords }}>
+    <UserContext.Provider value={{ level, nextLevel, numberOfWords, lastLevelCompleted }}>
       {children}
     </UserContext.Provider>
   )

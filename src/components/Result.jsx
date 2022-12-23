@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Result = ({ win, words, incorrectWord, result }) => {
+const Result = ({ win, words, incorrectWord, result, lastLevelCompleted }) => {
 
   const goNextGame = () => {
     result({win: null, words: [], incorrectWord: []});
@@ -22,8 +22,17 @@ const Result = ({ win, words, incorrectWord, result }) => {
         })}
       </div>
       <div className="flex justify-center gap-4 mt-4">
+
         <Link className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white hover:text-white" to={"/"}>Home</Link>
-        <button className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white" onClick={goNextGame}>Next Game</button>
+        
+        {win && !lastLevelCompleted && (
+          <button className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white" onClick={goNextGame}>Next Level</button>
+        )}
+
+        {!win && (
+          <button className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white" onClick={goNextGame}>Try Again</button>
+        )}
+
       </div>
     </>
   )
