@@ -18,14 +18,14 @@ export const getRandomWords = (number_of_words) => {
     
 }
 
-export const checkingResponse = (arr, objResponse) => {
+export const checkingResponse = (arr, arrResponse) => {
 
   let incorrectWord = []
   let win = true;
 
   for(let i = 0; i < arr.length - 1; i++) {
-    let iqualWord = iqualWords(arr[i], objResponse[i])
-    incorrectWord[i] = (iqualWord) ? "" : objResponse[i]
+    let iqualWord = iqualWords(arr[i], arrResponse[i])
+    incorrectWord[i] = (iqualWord) ? "" : arrResponse[i]
     if (!iqualWord) win = false;
   }
 
