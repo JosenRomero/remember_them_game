@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const ResponseInput = ({ handleInput }) => {
 
   const [currentResponse, setCurrentResponse] = useState("");
+  const ref = useRef(null);
 
   const nextResponse = () => {
+    ref.current.focus();
     handleInput(currentResponse);
     setCurrentResponse("");
+  }
+
+  const onKeyDownHandler = (e) => {
+    if(e.keyCode === 13) nextResponse();
   }
 
   return (
@@ -16,6 +22,8 @@ const ResponseInput = ({ handleInput }) => {
         <input
           type="text"
           name="response"
+          ref={ref}
+          onKeyDown={onKeyDownHandler}
           onChange={(e) => setCurrentResponse(e.target.value)}
           value={currentResponse}
           placeholder={`Agregar la palabra`}
