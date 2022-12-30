@@ -6,17 +6,21 @@ const ShowAndResponse = ({ result }) => {
   const { words, word, showingWords } = useWords();
   
   return (
-    <div className="text-center">
+    <>
       {showingWords && 
-        <div>{word}</div>
+        <div className="h-full grid place-content-center">
+          {word}
+        </div>
       }
       {!showingWords &&
-        <ResponseSection 
-          words={words}
-          result={result}
-        />
+        <div className="text-center">
+          <ResponseSection 
+            words={words}
+            result={result}
+          />
+        </div>
       }
-    </div>
+    </>
   )
 
 }
