@@ -19,7 +19,7 @@ const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, cl
   }
 
   return (
-    <Modal isOpen={isOpenModal} closeModal={closeModal}title={"Response Edit"}>
+    <Modal isOpen={isOpenModal} closeModal={clear}title={"Response Edit"}>
       <div className="mt-5">
         <input 
           type="text"
