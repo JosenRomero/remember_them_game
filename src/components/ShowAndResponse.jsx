@@ -8,7 +8,7 @@ const ShowAndResponse = ({ result }) => {
   return (
     <>
       {showingWords && 
-        <div className="h-full grid place-content-center">
+        <div className="h-full grid place-content-center text-3xl">
           {word}
         </div>
       }
