@@ -20,7 +20,7 @@ const PlayPage = () => {
 
   return (
     <>
-      <div>Level: {level}</div>
+      <div>Nivel: {level}</div>
       {win === null 
         ? <ShowAndResponse result={result} /> 
         : <Result win={win} words={words} incorrectWord={incorrectWord} result={result} lastLevelCompleted={lastLevelCompleted} />

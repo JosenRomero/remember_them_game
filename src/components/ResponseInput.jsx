@@ -32,11 +32,11 @@ const ResponseInput = ({ handleInput }) => {
             onKeyDown={onKeyDownHandler}
             onChange={(e) => setCurrentResponse(e.target.value)}
             value={currentResponse}
-            placeholder={`Agregar la palabra`}
+            placeholder={`Agregar una palabra`}
             className="bg-white border text-gray-700 rounded py-2 px-3 shadow"
             required
           />
-          <button className="ml-3 mt-3 bg-sky-500 hover:bg-sky-700 px-5 py-2 font-semibold text-white">Add</button>
+          <button className="ml-3 mt-3 bg-sky-500 hover:bg-sky-700 px-5 py-2 font-semibold text-white">agregar</button>
         </form>
       </div>
     </div>

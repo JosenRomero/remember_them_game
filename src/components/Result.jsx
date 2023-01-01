@@ -8,7 +8,7 @@ const Result = ({ win, words, incorrectWord, result, lastLevelCompleted }) => {
 
   return (
     <>
-      <h2 className="text-center mb-4">Result</h2>
+      <h2 className="text-center mb-4">Resultado</h2>
       <div>
         {incorrectWord.map((word, i) => {
           return (
@@ -23,14 +23,14 @@ const Result = ({ win, words, incorrectWord, result, lastLevelCompleted }) => {
       </div>
       <div className="flex justify-center gap-4 mt-4">
 
-        <Link className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white hover:text-white" to={"/"}>Home</Link>
+        <Link className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white hover:text-white" to={"/"}>Inicio</Link>
         
         {win && !lastLevelCompleted && (
-          <button className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white" onClick={goNextGame}>Next Level</button>
+          <button className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white" onClick={goNextGame}>Siguiente nivel</button>
         )}
 
         {!win && (
-          <button className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white" onClick={goNextGame}>Try Again</button>
+          <button className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white" onClick={goNextGame}>Intentar otra vez</button>
         )}
 
       </div>
