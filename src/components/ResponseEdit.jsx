@@ -8,8 +8,10 @@ const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, cl
   useEffect(() => setResponseModificated(oneResponse.content), [])
 
   const saveResponse = () => {
-    updateResponse(responseModificated, oneResponse.index);
-    clear();
+    if(responseModificated !== "") {
+      updateResponse(responseModificated, oneResponse.index);
+      clear();
+    }
   }
 
   const clear = () => {
@@ -19,7 +21,7 @@ const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, cl
   }
 
   return (
-    <Modal isOpen={isOpenModal} closeModal={clear}title={"Response Edit"}>
+    <Modal isOpen={isOpenModal} closeModal={clear} title={"Editar Respuesta"}>
       <div className="mt-5">
         <input 
           type="text"
@@ -29,8 +31,8 @@ const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, cl
         />
       </div>
       <div className="flex justify-center gap-4 mt-5">
-        <button onClick={() => clear()} className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white">Cancel</button>
-        <button onClick={() => saveResponse()} className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white">Save</button>
+        <button onClick={() => clear()} className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white">Cancelar</button>
+        <button onClick={() => saveResponse()} className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white">Guardar</button>
       </div>
     </Modal>
   )
