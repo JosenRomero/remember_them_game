@@ -1,17 +1,15 @@
-import { words, oneWord } from '../data'
+import { words, oneWord } from '../data/data.js'
 import { INITIAL_LEVEL, INITIAL_NUMBER_OF_WORDS } from './CONSTANTS'
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
-const getRandomWord = () => `${words[getRandomNumber(words.length)]}`
+const getRandomWord = (language) => `${words[language][getRandomNumber(words[language].length)]}`
 
-const iqualWords = (str1, str2) => str1 === str2.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-
-export const getRandomWords = (number_of_words) => {
+export const getRandomWords = (number_of_words, language) => {
 
   return [...Array(number_of_words).fill('')]
     .reduce((t) => {
-      let randomWord = getRandomWord();
+      let randomWord = getRandomWord(language);
       (t[t.length-1] === randomWord) ? t.push(oneWord) : t.push(randomWord)
       return t
     }, [])
@@ -24,7 +22,7 @@ export const checkingResponse = (arr, arrResponse) => {
   let win = true;
 
   for(let i = 0; i < arr.length - 1; i++) {
-    let iqualWord = iqualWords(arr[i], arrResponse[i])
+    let iqualWord = arr[i] === arrResponse[i]
     incorrectWord[i] = (iqualWord) ? "" : arrResponse[i]
     if (!iqualWord) win = false;
   }

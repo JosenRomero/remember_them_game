@@ -15,7 +15,7 @@ export const useWords = () => {
 
     if(words.length === 0 && word === null) {
 
-      let items = getRandomWords(numberOfWords);
+      let items = getRandomWords(numberOfWords, "es");
       items.push("");
       setWords(items);
       setWord(items[0]);
