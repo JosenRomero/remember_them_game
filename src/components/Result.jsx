@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Result = ({ win, words, incorrectWord, result, lastLevelCompleted }) => {
+const Result = ({ win, words, incorrectWord, result, lastLevelCompleted, level }) => {
 
   const goNextGame = () => {
     result({win: null, words: [], incorrectWord: []});
@@ -8,6 +8,10 @@ const Result = ({ win, words, incorrectWord, result, lastLevelCompleted }) => {
 
   return (
     <>
+      <div className="text-right">
+        Nivel: {level}
+        { win && <span className="animate-pulse ml-2 font-semibold bg-lime-700 rounded-full text-white p-2"> 1+</span> }
+      </div>
       <h2 className="text-center mb-4">Resultado</h2>
       <div>
         {incorrectWord.map((word, i) => {
