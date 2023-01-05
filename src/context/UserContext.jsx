@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from 'react';
 import { INITIAL_LEVEL, INITIAL_NUMBER_OF_WORDS, TOTAL_LEVELS } from '../utils/CONSTANTS'
-import { checkingCurrentData } from '../utils/utils'
+import { checkingCurrentData, setStorageItem } from '../utils/utils'
 
 export const UserContext = createContext()
 
@@ -12,39 +12,37 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
 
-    let { currentLevel, currentNumberOfWords } = checkingCurrentData();
-
-    setLevel(JSON.parse(currentLevel));
-    setNumberOfWords(JSON.parse(currentNumberOfWords));
-
-    checkingLastLevelCompleted();
+    let { currentLevel, currentNumberOfWords, isLastLevelCompleted } = checkingCurrentData();
+    
+    setLevel(currentLevel);
+    setNumberOfWords(currentNumberOfWords);
+    setLastLevelCompleted(isLastLevelCompleted);
 
   }, [])
 
-  const checkingLastLevelCompleted = () => {
-    let value = localStorage.getItem('lastLevelCompleted');
-    if(value !== null) setLastLevelCompleted(JSON.parse(value));
-  }
-
   const nextLevel = () => {
+
+    let gameState = { currentLevel: level, currentNumberOfWords: numberOfWords, isLastLevelCompleted: lastLevelCompleted }
 
     if(level < TOTAL_LEVELS) {
       
       let newValue = level + 1;
-      localStorage.setItem('level', JSON.stringify(newValue));
+      gameState.currentLevel = newValue;
       setLevel(newValue);
 
       if(newValue % 3 === 0 && newValue !== 9 && newValue !== 15) {
-        localStorage.setItem('numberOfWords', JSON.stringify(numberOfWords + 1));
+        gameState.currentNumberOfWords = numberOfWords + 1;
         setNumberOfWords(numberOfWords + 1);
       }
 
     }
     
     if(level === TOTAL_LEVELS) {
-      localStorage.setItem('lastLevelCompleted', JSON.stringify(true));
+      gameState.isLastLevelCompleted = true;
       setLastLevelCompleted(true);
     }
+
+    setStorageItem("gameState", gameState);
 
   }
 

@@ -32,17 +32,20 @@ export const checkingResponse = (arr, arrResponse) => {
 }
 
 export const checkingCurrentData = () => {
-  
-  let currentLevel = localStorage.getItem('level');
-  let currentNumberOfWords = localStorage.getItem('numberOfWords');
 
-  if(currentLevel === null) {
-    localStorage.setItem('level', JSON.stringify(INITIAL_LEVEL));
-    localStorage.setItem('numberOfWords', JSON.stringify(INITIAL_NUMBER_OF_WORDS));
-    currentLevel = INITIAL_LEVEL;
-    currentNumberOfWords = INITIAL_NUMBER_OF_WORDS;
+  let gameState = getStorageItem("gameState");
+
+  if(gameState === null) {
+    gameState = { currentLevel: INITIAL_LEVEL, currentNumberOfWords: INITIAL_NUMBER_OF_WORDS, isLastLevelCompleted: false }
+    setStorageItem("gameState", gameState);
+  } else {
+    gameState = JSON.parse(gameState)
   }
 
-  return { currentLevel, currentNumberOfWords }
+  return gameState
 
 }
+
+export const getStorageItem = (key) => localStorage.getItem(key)
+
+export const setStorageItem = (key, value) => localStorage.setItem(key, JSON.stringify(value))
