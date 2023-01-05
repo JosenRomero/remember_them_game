@@ -1,5 +1,6 @@
 import { words, oneWord } from '../data/data.js'
 import { INITIAL_LEVEL, INITIAL_NUMBER_OF_WORDS } from './CONSTANTS'
+import { encryptStorage } from './storage.js'
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
@@ -35,17 +36,15 @@ export const checkingCurrentData = () => {
 
   let gameState = getStorageItem("gameState");
 
-  if(gameState === null) {
+  if(gameState === undefined) {
     gameState = { currentLevel: INITIAL_LEVEL, currentNumberOfWords: INITIAL_NUMBER_OF_WORDS, isLastLevelCompleted: false }
     setStorageItem("gameState", gameState);
-  } else {
-    gameState = JSON.parse(gameState)
   }
 
   return gameState
 
 }
 
-export const getStorageItem = (key) => localStorage.getItem(key)
+export const getStorageItem = (key) => encryptStorage.getItem(key)
 
-export const setStorageItem = (key, value) => localStorage.setItem(key, JSON.stringify(value))
+export const setStorageItem = (key, value) => encryptStorage.setItem(key, value)
