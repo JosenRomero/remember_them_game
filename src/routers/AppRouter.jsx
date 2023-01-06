@@ -10,8 +10,8 @@ const AppRouter = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/play" element={<PlayPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="play" element={<PlayPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
