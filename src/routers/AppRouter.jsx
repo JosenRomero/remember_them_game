@@ -10,7 +10,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/*">
+          <Route path="/">
             <Route index element={<HomePage />} />
             <Route path="play" element={<PlayPage />} />
             <Route path="*" element={<NotFoundPage />} />
