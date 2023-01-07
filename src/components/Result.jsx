@@ -12,8 +12,8 @@ const Result = ({ win, words, incorrectWord, result, lastLevelCompleted, level }
         Nivel: {level}
         { win && !lastLevelCompleted && <span className="animate-pulse ml-2 font-semibold bg-lime-700 rounded-full text-white p-2"> 1+</span> }
       </div>
-      <h2 className="text-center mb-4">Resultado</h2>
-      <div>
+      <h2 className="text-center mt-5 mb-8">Resultado</h2>
+      <div className="text-center">
         {incorrectWord.map((word, i) => {
           return (
             <p 
@@ -28,7 +28,7 @@ const Result = ({ win, words, incorrectWord, result, lastLevelCompleted, level }
       { lastLevelCompleted && (
         <h3 className="bg-lime-700 text-white py-2 my-5 text-center">Has completado todos los niveles. ¡Felicidades!</h3>
       )}
-      <div className="flex justify-center gap-4 mt-4">
+      <div className="flex justify-center gap-4 mt-8">
 
         <Link className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white hover:text-white" to={"/"}>Inicio</Link>
         
