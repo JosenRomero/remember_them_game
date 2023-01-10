@@ -1,0 +1,27 @@
+{
+  "buttons": {
+    "play": "Jugar",
+    "home": "Inicio",
+    "nextLevel": "Siguiente nivel",
+    "tryAgain": "Intentar otra vez",
+    "check": "Comprobar",
+    "edit": "Editar",
+    "add": "Agregar",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "title": {
+    "notFoundPage": "Página No Encontrada",
+    "result": "Resultado"
+  },
+  "text": {
+    "level": "Nivel",
+    "endText": "Has completado todos los niveles. ¡Felicidades!",
+    "addedAnswers": "Respuestas agregadas",
+    "answer": "Respuesta",
+    "paragraph1": "Escribe las palabras en el orden correcto",
+    "inputText": "Agrega una palabra",
+    "editAnswer": "Editar respuesta"
+  },
+  "footerText": "Desarrollado por"
+}

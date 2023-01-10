@@ -1,0 +1,27 @@
+{
+  "buttons": {
+    "play": "Play",
+    "home": "Home",
+    "nextLevel": "Next Level",
+    "tryAgain": "Try Again",
+    "check": "Check",
+    "edit": "Edit",
+    "add": "Add",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "title": {
+    "notFoundPage": "Not Found Page",
+    "result": "Result"
+  },
+  "text": {
+    "level": "Level",
+    "endText": "You have completed all levels. Congratulations!",
+    "addedAnswers": "Added answers",
+    "answer": "Answer",
+    "paragraph1": "Write the words in the correct order",
+    "inputText": "Add a word",
+    "editAnswer": "Edit answer"
+  },
+  "footerText": "Developed by"
+}
