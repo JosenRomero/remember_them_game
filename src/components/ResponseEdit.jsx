@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import Modal from './Modal'
 
 const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, clearOneResponse }) => {
 
+  const { t } = useTranslation();
   const [responseModificated, setResponseModificated] = useState("");
 
   useEffect(() => setResponseModificated(oneResponse.content), [])
@@ -21,7 +23,7 @@ const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, cl
   }
 
   return (
-    <Modal isOpen={isOpenModal} closeModal={clear} title={"Editar Respuesta"}>
+    <Modal isOpen={isOpenModal} closeModal={clear} title={ t('text.editAnswer') }>
       <div className="mt-5">
         <input 
           type="text"
@@ -31,8 +33,8 @@ const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, cl
         />
       </div>
       <div className="flex justify-center gap-4 mt-5">
-        <button onClick={() => clear()} className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white">Cancelar</button>
-        <button onClick={() => saveResponse()} className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white">Guardar</button>
+        <button onClick={() => clear()} className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white">{ t('buttons.cancel') }</button>
+        <button onClick={() => saveResponse()} className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white">{ t('buttons.save') }</button>
       </div>
     </Modal>
   )

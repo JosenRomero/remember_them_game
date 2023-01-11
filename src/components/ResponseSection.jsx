@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import { useModal } from '../hooks/useModal'
 import ResponseInput from './ResponseInput'
 import ResponseList from './ResponseList'
 import ResponseEdit from './ResponseEdit'
 import { checkingResponse } from '../utils/utils'
+import { useTranslation } from 'react-i18next'
 
 const ResponseSection = ({ words, result }) => {
 
+  const { t } = useTranslation();
   const [response, setResponse] = useState([]);
   const [oneResponse, setOneResponse] = useState({ index: "", content: "" });
   const { isOpenModal, openModal, closeModal } = useModal();
@@ -35,7 +37,7 @@ const ResponseSection = ({ words, result }) => {
     <>
       { response.length < words.length-1
         ? <ResponseInput handleInput={handleInput} />
-        : <button onClick={() => handleResponse()} className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white">ver resultado</button>
+        : <button onClick={() => handleResponse()} className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white">{ t('buttons.check') }</button>
       }
       <ResponseList arr={response} responseId={responseId} />
       { oneResponse.content !== "" && 
