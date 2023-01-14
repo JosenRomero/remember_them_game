@@ -11,7 +11,7 @@ export const getRandomWords = (number_of_words, language) => {
   return [...Array(number_of_words).fill('')]
     .reduce((t) => {
       let randomWord = getRandomWord(language);
-      (t[t.length-1] === randomWord) ? t.push(oneWord) : t.push(randomWord)
+      (t[t.length-1] === randomWord) ? t.push(oneWord[language]) : t.push(randomWord)
       return t
     }, [])
     

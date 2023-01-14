@@ -1,9 +1,11 @@
 import { useEffect, useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next'
 import { getRandomWords } from '../utils/utils'
 import { UserContext } from '../context/UserContext'
 
 export const useWords = () => {
 
+  const { i18n } = useTranslation();
   const { numberOfWords } = useContext(UserContext);
 
   const [words, setWords] = useState([]);
@@ -15,7 +17,7 @@ export const useWords = () => {
 
     if(words.length === 0 && word === null) {
 
-      let items = getRandomWords(numberOfWords, "es");
+      let items = getRandomWords(numberOfWords, i18n.language);
       items.push("");
       setWords(items);
       setWord(items[0]);
