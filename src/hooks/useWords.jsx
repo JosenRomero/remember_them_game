@@ -15,7 +15,7 @@ export const useWords = () => {
 
   useEffect(() => {
 
-    if(words.length === 0 && word === null) {
+    if(words.length === 0 && word === null && numberOfWords !== null) {
 
       let items = getRandomWords(numberOfWords, i18n.language);
       items.push("");
@@ -24,7 +24,7 @@ export const useWords = () => {
 
     }
 
-  }, [])
+  }, [numberOfWords])
 
   useEffect(() => {
 

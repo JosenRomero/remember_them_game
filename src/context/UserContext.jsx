@@ -8,7 +8,7 @@ export const UserProvider = ({ children }) => {
 
   const [ lastLevelCompleted, setLastLevelCompleted ] = useState(false);
   const [ level, setLevel ] = useState(INITIAL_LEVEL);
-  const [ numberOfWords, setNumberOfWords] = useState(INITIAL_NUMBER_OF_WORDS);
+  const [ numberOfWords, setNumberOfWords] = useState(null);
 
   useEffect(() => {
 
