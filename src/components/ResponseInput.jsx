@@ -35,7 +35,7 @@ const ResponseInput = ({ handleInput }) => {
             onChange={(e) => setCurrentResponse(e.target.value)}
             value={currentResponse}
             placeholder={ t('text.inputText') }
-            className="bg-white border text-gray-700 rounded py-2 px-3 w-3/4 shadow"
+            className="bg-white border text-gray-700 rounded py-2 px-3 w-3/4 md:w-1/3 shadow"
             required
           />
           <button className="ml-3 mt-3 bg-sky-500 hover:bg-sky-700 px-5 py-2 font-semibold text-white">{ t('buttons.add') }</button>
