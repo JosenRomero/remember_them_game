@@ -14,6 +14,12 @@
     "notFoundPage": "Página No Encontrada",
     "result": "Resultado"
   },
+  "howToPlay" : {
+    "title": "Cómo jugar",
+    "paragraph1": "El jugador tiene que memorizar cada palabra que aparece por un tiempo limitado en la pantalla.",
+    "paragraph2": "Y luego el jugador tiene que ingresar esas palabras, una por una, en un cuadro de texto.",
+    "paragraph3": "Si el jugador escribe todas las palabras correctamente y en el orden correcto, el nivel aumentará. De lo contrario, el jugador tiene que volver a intentarlo."
+  },
   "text": {
     "level": "Nivel",
     "endText": "Has completado todos los niveles. ¡Felicidades!",

@@ -14,6 +14,12 @@
     "notFoundPage": "Not Found Page",
     "result": "Result"
   },
+  "howToPlay": {
+    "title": "How to play",
+    "paragraph1": "The player has to memorize each word that appears for a limited time on the screen.",
+    "paragraph2": "And then the player has to enter those words, one by one, in a text box.",
+    "paragraph3": "If the player writes all the words correctly and in the correct order, then the level will increase. Otherwise, the player has to try again."
+  },
   "text": {
     "level": "Level",
     "endText": "You have completed all levels. Congratulations!",

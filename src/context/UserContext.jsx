@@ -7,7 +7,7 @@ export const UserContext = createContext()
 export const UserProvider = ({ children }) => {
 
   const [ lastLevelCompleted, setLastLevelCompleted ] = useState(false);
-  const [ level, setLevel ] = useState(INITIAL_LEVEL);
+  const [ level, setLevel ] = useState(null);
   const [ numberOfWords, setNumberOfWords] = useState(null);
 
   useEffect(() => {
