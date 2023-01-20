@@ -8,7 +8,7 @@ const ResultButtons = ({ win, lastLevelCompleted, result }) => {
   const goNextGame = () => result({win: null, words: [], incorrectWord: []})
   
   return (
-    <div className="flex justify-center gap-4 mt-8">
+    <div className="flex flex-col sm:flex-row justify-center text-center gap-4 mt-8">
 
       <Link className="bg-slate-500 hover:bg-slate-700 px-5 py-2 rounded-xl font-semibold text-white hover:text-white" to={"/"}>{ t('buttons.home') }</Link>
         
