@@ -22,7 +22,9 @@
   "result": {
     "title": "Result",
     "complete": "Complete!",
-    "failed": "Failed!"
+    "failed": "Failed!",
+    "correctWords": "Correct words",
+    "incorrectWords": "Incorrect words"
   },
   "text": {
     "level": "Level",
