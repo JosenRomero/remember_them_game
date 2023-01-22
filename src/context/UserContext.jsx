@@ -15,15 +15,19 @@ export const UserProvider = ({ children }) => {
     updateState(gameState);
   }, [])
 
-  const updateState = ({ currentLevel, currentNumberOfWords, isLastLevelCompleted }) => {
-    setLevel(currentLevel);
-    setNumberOfWords(currentNumberOfWords);
-    setLastLevelCompleted(isLastLevelCompleted);
+  const updateState = (gameState) => {
+    setLevel(gameState.currentLevel);
+    setNumberOfWords(gameState.currentNumberOfWords);
+    setLastLevelCompleted(gameState.isLastLevelCompleted);
+  }
+
+  const currentGameState = () => {
+    return { currentLevel: level, currentNumberOfWords: numberOfWords, isLastLevelCompleted: lastLevelCompleted }
   }
 
   const nextLevel = () => {
 
-    let gameState = { currentLevel: level, currentNumberOfWords: numberOfWords, isLastLevelCompleted: lastLevelCompleted }
+    let gameState = currentGameState();
 
     if(level < TOTAL_LEVELS) {
       let newValue = level + 1;
