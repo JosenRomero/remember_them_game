@@ -41,6 +41,12 @@ export const checkingCurrentData = () => {
     setStorageItem("gameState", gameState);
   }
 
+  // update gameState
+  if(gameState && !gameState.hasOwnProperty("currentLevelAttempts")) {
+    gameState.currentLevelAttempts = 0;
+    setStorageItem("gameState", gameState);
+  }
+
   return gameState
 
 }
