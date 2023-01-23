@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserContext'
 
 const PlayPage = () => {
 
-  const { level, nextLevel, lastLevelCompleted } = useContext(UserContext);
+  const { level, nextLevel, updateLevelAttempts, levelAttempts, lastLevelCompleted } = useContext(UserContext);
 
   const [win, setWin] = useState(null);
   const [words, setWords] = useState([]);
@@ -16,13 +16,14 @@ const PlayPage = () => {
     setWords(res.words);
     setIncorrectWord(res.incorrectWord);
     if(res.win) nextLevel();
+    if(res.win === false) updateLevelAttempts(false);
   }
 
   return (
     <>
       {win === null 
         ? <ShowAndResponse result={result} /> 
-        : <Result win={win} words={words} incorrectWord={incorrectWord} result={result} lastLevelCompleted={lastLevelCompleted} level={level} />
+        : <Result win={win} words={words} incorrectWord={incorrectWord} result={result} lastLevelCompleted={lastLevelCompleted} level={level} levelAttempts={levelAttempts} updateLevelAttempts={updateLevelAttempts} />
       }
     </>
   )

@@ -24,7 +24,8 @@
     "complete": "Complete!",
     "failed": "Failed!",
     "correctWords": "Correct words",
-    "incorrectWords": "Incorrect words"
+    "incorrectWords": "Incorrect words",
+    "attempts": "Attempts"
   },
   "text": {
     "level": "Level",

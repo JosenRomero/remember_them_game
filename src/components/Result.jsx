@@ -3,7 +3,7 @@ import ResultWordsList from './ResultWordsList'
 import ResultButtons from './ResultButtons'
 import ResultBoard from './ResultBoard'
 
-const Result = ({ win, words, incorrectWord, result, lastLevelCompleted, level }) => {
+const Result = ({ win, words, incorrectWord, result, lastLevelCompleted, level, levelAttempts, updateLevelAttempts }) => {
 
   const { t } = useTranslation();
 
@@ -14,7 +14,7 @@ const Result = ({ win, words, incorrectWord, result, lastLevelCompleted, level }
       { lastLevelCompleted && (
         <h3 className="bg-lime-700 text-white py-2 my-5 text-center">{ t('text.endText') }</h3>
       )}
-      <ResultBoard lengthWords={words.length - 1} incorrectWord={incorrectWord} />
+      <ResultBoard lengthWords={words.length - 1} incorrectWord={incorrectWord} levelAttempts={levelAttempts} updateLevelAttempts={updateLevelAttempts} win={win} />
       <ResultButtons win={win} lastLevelCompleted={lastLevelCompleted} result={result} />
     </>
   )

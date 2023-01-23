@@ -37,7 +37,7 @@ export const checkingCurrentData = () => {
   let gameState = getStorageItem("gameState");
 
   if(gameState === undefined) {
-    gameState = { currentLevel: INITIAL_LEVEL, currentNumberOfWords: INITIAL_NUMBER_OF_WORDS, isLastLevelCompleted: false }
+    gameState = { currentLevel: INITIAL_LEVEL, currentNumberOfWords: INITIAL_NUMBER_OF_WORDS, isLastLevelCompleted: false, currentLevelAttempts: 0 }
     setStorageItem("gameState", gameState);
   }
 

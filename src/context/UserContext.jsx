@@ -9,6 +9,7 @@ export const UserProvider = ({ children }) => {
   const [ lastLevelCompleted, setLastLevelCompleted ] = useState(false);
   const [ level, setLevel ] = useState(null);
   const [ numberOfWords, setNumberOfWords] = useState(null);
+  const [ levelAttempts, setLevelAttempts ] = useState(null);
 
   useEffect(() => {
     let gameState = checkingCurrentData();
@@ -19,10 +20,11 @@ export const UserProvider = ({ children }) => {
     setLevel(gameState.currentLevel);
     setNumberOfWords(gameState.currentNumberOfWords);
     setLastLevelCompleted(gameState.isLastLevelCompleted);
+    setLevelAttempts(gameState.currentLevelAttempts);
   }
 
   const currentGameState = () => {
-    return { currentLevel: level, currentNumberOfWords: numberOfWords, isLastLevelCompleted: lastLevelCompleted }
+    return { currentLevel: level, currentNumberOfWords: numberOfWords, isLastLevelCompleted: lastLevelCompleted, currentLevelAttempts: levelAttempts }
   }
 
   const nextLevel = () => {
@@ -37,13 +39,23 @@ export const UserProvider = ({ children }) => {
     
     if(level === TOTAL_LEVELS) gameState.isLastLevelCompleted = true;
 
+    gameState.currentLevelAttempts = levelAttempts + 1;
+
     updateState(gameState);
     setStorageItem("gameState", gameState);
 
   }
 
+  const updateLevelAttempts = (resetValue) => {
+    let gameState = currentGameState();
+    let newValue = (resetValue) ? 0 : levelAttempts + 1
+    gameState.currentLevelAttempts = newValue;
+    setLevelAttempts(newValue);
+    setStorageItem("gameState", gameState);
+  }
+
   return (
-    <UserContext.Provider value={{ level, nextLevel, numberOfWords, lastLevelCompleted }}>
+    <UserContext.Provider value={{ level, nextLevel, updateLevelAttempts, levelAttempts, numberOfWords, lastLevelCompleted }}>
       {children}
     </UserContext.Provider>
   )
