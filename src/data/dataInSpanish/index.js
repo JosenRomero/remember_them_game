@@ -1,9 +1,9 @@
-import { animals } from './animals.js'
-import { bodyParts } from './bodyParts.js'
-import { foods } from './foods.js'
+import { animalsInSpanish } from './basic/animalsInSpanish.js'
+import { bodyPartsInSpanish } from './basic/bodyPartsInSpanish.js'
+import { foodsInSpanish } from './basic/foodsInSpanish.js'
 
-export const data_in_spanish = [
-  ...animals,
-  ...bodyParts,
-  ...foods
+export const basic_data_in_spanish = [
+  ...animalsInSpanish,
+  ...bodyPartsInSpanish,
+  ...foodsInSpanish
 ]

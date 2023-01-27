@@ -1,12 +1,12 @@
-import { animalsInEnglish } from './animalsInEnglish.js'
-import { bodyPartsInEnglish } from './bodyPartsInEnglish.js'
-import { foodsInEnglish } from './foodsInEnglish.js'
-import { anime } from './anime/anime.js'
+import { animalsInEnglish } from './basic/animalsInEnglish.js'
+import { bodyPartsInEnglish } from './basic/bodyPartsInEnglish.js'
+import { foodsInEnglish } from './basic/foodsInEnglish.js'
+import { animeInEnglish } from './anime/animeInEnglish.js'
 
-export const data_in_english = [
+export const basic_data_in_english = [
   ...animalsInEnglish,
   ...bodyPartsInEnglish,
   ...foodsInEnglish
 ]
 
-export const anime_data_in_english = [...anime]
+export const anime_data_in_english = [...animeInEnglish]

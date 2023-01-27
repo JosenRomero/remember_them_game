@@ -1,4 +1,4 @@
-export const bodyParts = [
+export const bodyPartsInSpanish = [
   "Abdomen",
   "Antebrazo",
   "Arteria",

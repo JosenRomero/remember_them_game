@@ -1,4 +1,4 @@
-export const anime = [
+export const animeInEnglish = [
   "Akatsuki no Yona",
   "Another",
   "Astro Boy",

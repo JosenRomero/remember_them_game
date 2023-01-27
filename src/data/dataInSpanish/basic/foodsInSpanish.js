@@ -1,4 +1,4 @@
-export const foods = [
+export const foodsInSpanish = [
   "Aceite",
   "Aguacate",
   "Arroz",
