@@ -4,14 +4,14 @@ import { encryptStorage } from './storage.js'
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
-const getRandomWord = (language) => `${words[language][getRandomNumber(words[language].length)]}`
+const getRandomWord = (language, mode) => `${words[language][mode][getRandomNumber(words[language][mode].length)]}`
 
-export const getRandomWords = (number_of_words, language) => {
+export const getRandomWords = (number_of_words, language, mode) => {
 
   return [...Array(number_of_words).fill('')]
     .reduce((t) => {
-      let randomWord = getRandomWord(language);
-      (t[t.length-1] === randomWord) ? t.push(oneWord[language]) : t.push(randomWord)
+      let randomWord = getRandomWord(language, mode);
+      (t[t.length-1] === randomWord) ? t.push(oneWord[language][mode]) : t.push(randomWord)
       return t
     }, [])
     

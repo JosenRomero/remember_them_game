@@ -17,7 +17,7 @@ export const useWords = () => {
 
     if(words.length === 0 && word === null && numberOfWords !== null) {
 
-      let items = getRandomWords(numberOfWords, i18n.language);
+      let items = getRandomWords(numberOfWords, i18n.language, "basicMode");
       items.push("");
       setWords(items);
       setWord(items[0]);
