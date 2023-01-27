@@ -1,17 +1,19 @@
-import { words, oneWord } from '../data/data.js'
+import { words } from '../data/data.js'
 import { INITIAL_LEVEL, INITIAL_NUMBER_OF_WORDS } from './CONSTANTS'
 import { encryptStorage } from './storage.js'
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
-const getRandomWord = (language, mode) => `${words[language][mode][getRandomNumber(words[language][mode].length)]}`
+const getRandomWord = (myWords) => `${myWords[getRandomNumber(myWords.length - 1)]}`
 
 export const getRandomWords = (number_of_words, language, mode) => {
 
+  const myWords = words[language][mode];
+
   return [...Array(number_of_words).fill('')]
     .reduce((t) => {
-      let randomWord = getRandomWord(language, mode);
-      (t[t.length-1] === randomWord) ? t.push(oneWord[language][mode]) : t.push(randomWord)
+      let randomWord = getRandomWord(myWords);
+      (t[t.length-1] === randomWord) ? t.push(myWords[myWords.length - 1]) : t.push(randomWord)
       return t
     }, [])
     

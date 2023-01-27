@@ -11,14 +11,3 @@ export const words = {
     "animeMode": anime_data_in_english
   }
 }
-
-export const oneWord = {
-  "es": {
-    "basicMode": "Computadora",
-    "animeMode": "--"
-  },
-  "en": {
-    "basicMode": "Computer",
-    "animeMode": "--"
-  }
-}
