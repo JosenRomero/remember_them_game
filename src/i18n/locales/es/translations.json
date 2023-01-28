@@ -27,6 +27,10 @@
     "incorrectWords": "Palabras incorrectas",
     "attempts": "Intentos"
   },
+  "settings": {
+    "title": "Ajustes",
+    "selectLanguage": "Seleccione el idioma"
+  },
   "text": {
     "level": "Nivel",
     "endText": "Has completado todos los niveles. ¡Felicidades!",

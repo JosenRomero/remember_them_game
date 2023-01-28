@@ -27,6 +27,10 @@
     "incorrectWords": "Incorrect words",
     "attempts": "Attempts"
   },
+  "settings": {
+    "title": "Settings",
+    "selectLanguage": "Select language"
+  },
   "text": {
     "level": "Level",
     "endText": "You have completed all levels. Congratulations!",
