@@ -3,6 +3,7 @@ import { useModal } from '../hooks/useModal'
 import { useNeo } from '../hooks/useNeo'
 import Modal from './Modal'
 import ListItem from './ListItem'
+import LightButton from './LightButton'
 
 const HowToPlay = () => {
 
@@ -13,7 +14,7 @@ const HowToPlay = () => {
 
   return (
     <>
-      <button onClick={() => openModal()} className="hover:opacity-50">{ t('howToPlay.title') }</button>
+      <LightButton click={openModal} text={ t('howToPlay.title') } />
       <Modal isOpen={isOpenModal} closeModal={closeModal} title={ t('howToPlay.title') }>
         <div className="mt-5 flex flex-col gap-5">
           {[...Array(3)].map((_, i) => {
