@@ -1,5 +1,5 @@
 
-const Dropdown = ({ changeLanguage, language }) => {
+const SelectLanguage = ({ changeLanguage, language }) => {
 
   return (
     <>
@@ -12,4 +12,4 @@ const Dropdown = ({ changeLanguage, language }) => {
 
 }
 
-export default Dropdown
+export default SelectLanguage
