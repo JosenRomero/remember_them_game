@@ -34,6 +34,19 @@ export const checkingResponse = (arr, arrResponse) => {
 
 }
 
+export const checkingCurrentSettings = () => {
+
+    let settings = getStorageItem("settings");
+
+    if(settings === undefined) {
+      settings = { mode: "basicMode" }
+      setStorageItem("settings", settings);
+    }
+
+    return settings
+
+}
+
 export const checkingCurrentData = () => {
 
   let gameState = getStorageItem("gameState");

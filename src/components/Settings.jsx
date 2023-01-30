@@ -3,6 +3,7 @@ import { useModal } from '../hooks/useModal'
 import Modal from './Modal'
 import SelectLanguage from './SelectLanguage'
 import LightButton from './LightButton'
+import SelectMode from './SelectMode'
 
 const Settings = () => {
 
@@ -17,6 +18,7 @@ const Settings = () => {
       <Modal isOpen={isOpenModal} closeModal={closeModal} title={ t('settings.title') }>
         <div className="mt-5 flex flex-col gap-5">
           <SelectLanguage changeLanguage={changeLanguage} language={i18n.language} labelContent={ t('settings.selectLanguage') } />
+          <SelectMode labelContent={ t('settings.gameMode') } />
         </div>
       </Modal>
     </>

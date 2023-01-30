@@ -2,11 +2,13 @@ import { useEffect, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next'
 import { getRandomWords } from '../utils/utils'
 import { UserContext } from '../context/UserContext'
+import { SettingsContext } from '../context/SettingsContext'
 
 export const useWords = () => {
 
   const { i18n } = useTranslation();
   const { numberOfWords } = useContext(UserContext);
+  const { mode } = useContext(SettingsContext);
 
   const [words, setWords] = useState([]);
   const [word, setWord] = useState(null);
@@ -17,7 +19,7 @@ export const useWords = () => {
 
     if(words.length === 0 && word === null && numberOfWords !== null) {
 
-      let items = getRandomWords(numberOfWords, i18n.language, "basicMode");
+      let items = getRandomWords(numberOfWords, i18n.language, mode);
       items.push("");
       setWords(items);
       setWord(items[0]);
