@@ -30,7 +30,10 @@
   "settings": {
     "title": "Settings",
     "selectLanguage": "Select language",
-    "gameMode": "Game mode"
+    "gameMode": "Game mode",
+    "messages": {
+      "animeMode_msg": "* Not all anime names are in English, e.g. Kimetsu no Yaiba"
+    }
   },
   "text": {
     "level": "Level",

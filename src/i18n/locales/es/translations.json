@@ -30,7 +30,10 @@
   "settings": {
     "title": "Ajustes",
     "selectLanguage": "Seleccione el idioma",
-    "gameMode": "Modo de juego"
+    "gameMode": "Modo de juego",
+    "messages": {
+      "animeMode_msg": "* No todos los nombres de anime están en Español, p. ej. Another"
+    }
   },
   "text": {
     "level": "Nivel",

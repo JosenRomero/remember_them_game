@@ -18,7 +18,7 @@ const Settings = () => {
       <Modal isOpen={isOpenModal} closeModal={closeModal} title={ t('settings.title') }>
         <div className="mt-5 flex flex-col gap-5">
           <SelectLanguage changeLanguage={changeLanguage} language={i18n.language} labelContent={ t('settings.selectLanguage') } />
-          <SelectMode labelContent={ t('settings.gameMode') } />
+          <SelectMode labelContent={ t('settings.gameMode') } animeMode_msg={ t('settings.messages.animeMode_msg') } />
         </div>
       </Modal>
     </>
