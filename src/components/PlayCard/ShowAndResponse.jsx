@@ -1,5 +1,5 @@
-import { useWords } from '../hooks/useWords'
-import ResponseSection from './ResponseSection'
+import { useWords } from '../../hooks/useWords'
+import ResponseSection from './ResponseSection/ResponseSection'
 
 const ShowAndResponse = ({ result }) => {
 

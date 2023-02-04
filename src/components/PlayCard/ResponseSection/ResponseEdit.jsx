@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import Modal from './Modal'
+import Modal from '../../Modal'
 
 const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, clearOneResponse }) => {
 

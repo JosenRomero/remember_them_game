@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useModal } from '../hooks/useModal'
+import { useModal } from '../../../hooks/useModal'
 import ResponseInput from './ResponseInput'
 import ResponseList from './ResponseList'
 import ResponseEdit from './ResponseEdit'
-import { checkingResponse } from '../utils/utils'
+import { checkingResponse } from '../../../utils/utils'
 import { useTranslation } from 'react-i18next'
 
 const ResponseSection = ({ words, result }) => {

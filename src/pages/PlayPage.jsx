@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
-import ShowAndResponse from '../components/ShowAndResponse'
-import Result from '../components/Result'
+import ShowAndResponse from '../components/PlayCard/ShowAndResponse'
+import Result from '../components/PlayCard/ResultSection/Result'
 import { UserContext } from '../context/UserContext'
 
 const PlayPage = () => {
