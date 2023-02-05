@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from 'react';
 import { TOTAL_LEVELS } from '../utils/CONSTANTS'
-import { checkingCurrentData, setStorageItem } from '../utils/utils'
+import { checkingCurrentData, setStorageItem } from '../utils/checkingStorage'
 
 export const UserContext = createContext()
 

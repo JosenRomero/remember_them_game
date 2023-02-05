@@ -1,6 +1,4 @@
 import { words } from '../data/data.js'
-import { INITIAL_LEVEL, INITIAL_NUMBER_OF_WORDS } from './CONSTANTS'
-import { encryptStorage } from './storage.js'
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
@@ -33,39 +31,3 @@ export const checkingResponse = (arr, arrResponse) => {
   return { incorrectWord, win }
 
 }
-
-export const checkingCurrentSettings = () => {
-
-    let settings = getStorageItem("settings");
-
-    if(settings === undefined) {
-      settings = { mode: "basicMode" }
-      setStorageItem("settings", settings);
-    }
-
-    return settings
-
-}
-
-export const checkingCurrentData = () => {
-
-  let gameState = getStorageItem("gameState");
-
-  if(gameState === undefined) {
-    gameState = { currentLevel: INITIAL_LEVEL, currentNumberOfWords: INITIAL_NUMBER_OF_WORDS, isLastLevelCompleted: false, currentLevelAttempts: 0 }
-    setStorageItem("gameState", gameState);
-  }
-
-  // update gameState
-  if(gameState && !gameState.hasOwnProperty("currentLevelAttempts")) {
-    gameState.currentLevelAttempts = 0;
-    setStorageItem("gameState", gameState);
-  }
-
-  return gameState
-
-}
-
-export const getStorageItem = (key) => encryptStorage.getItem(key)
-
-export const setStorageItem = (key, value) => encryptStorage.setItem(key, value)

@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
-import { checkingCurrentSettings, setStorageItem } from '../utils/utils'
+import { checkingCurrentSettings, setStorageItem } from '../utils/checkingStorage'
 
 export const SettingsContext = createContext()
 
