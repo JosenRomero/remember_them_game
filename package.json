@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cohere-ai": "^5.0.2",
     "encrypt-storage": "^2.12.14",
     "i18next": "^22.4.9",
     "i18next-browser-languagedetector": "^7.0.1",
