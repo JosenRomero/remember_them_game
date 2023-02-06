@@ -6,7 +6,8 @@ export const SettingsContext = createContext()
 export const SettingsProvider = ({ children }) => {
 
   const [ settings, setSettings ] = useState({
-    mode: ""
+    mode: "",
+    iaData: null
   });
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export const SettingsProvider = ({ children }) => {
   }
 
   return (
-    <SettingsContext.Provider value={{ mode: settings.mode, updateSettings }}>
+    <SettingsContext.Provider value={{ mode: settings.mode, iaData: settings.iaData, updateSettings }}>
       {children}
     </SettingsContext.Provider>
   )

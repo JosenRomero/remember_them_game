@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { SettingsContext } from '../context/SettingsContext'
 import { getIAData } from '../services/ia.js'
 import Loader from './Loader'
 
 const WordInput = () => {
 
+  const { iaData, updateSettings } = useContext(SettingsContext);
+  const navigate = useNavigate();
   const [word, setWord] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -11,7 +15,9 @@ const WordInput = () => {
     e.preventDefault();
     setLoading(true);
     let words = await getIAData(word);
-    console.log(words);
+    let number = iaData.number + 1;
+    updateSettings("iaData", { words, number });
+    navigate('/play');
   }
 
   if(loading) return <Loader />

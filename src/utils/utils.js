@@ -4,9 +4,9 @@ const getRandomNumber = (max) => Math.floor(Math.random() * max)
 
 const getRandomWord = (myWords) => `${myWords[getRandomNumber(myWords.length - 1)]}`
 
-export const getRandomWords = (number_of_words, language, mode) => {
+export const getRandomWords = (number_of_words, language, mode, iaData) => {
 
-  const myWords = words[language][mode];
+  const myWords = (mode === "iaMode") ? iaData.words : words[language][mode]
 
   return [...Array(number_of_words).fill('')]
     .reduce((t) => {

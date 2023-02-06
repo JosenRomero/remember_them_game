@@ -15,7 +15,14 @@ const checkingStorage = (key, defaultValue) => {
 }
 
 export const checkingCurrentSettings = () => {
-  let settings = checkingStorage("settings", { mode: "basicMode" });
+  let settings = checkingStorage("settings", { mode: "iaMode", iaData: { words: [], number: 0 } });
+
+  // update Settings
+  if(!settings.hasOwnProperty("iaData")) {
+    settings.iaData = { words: [], number: 0 }
+    setStorageItem("settings", settings);
+  }
+
   return settings
 }
 
