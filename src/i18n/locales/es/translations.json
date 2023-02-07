@@ -1,6 +1,7 @@
 {
   "buttons": {
     "play": "Jugar",
+    "GenerateAndPlay": "Generar y Jugar",
     "home": "Inicio",
     "nextLevel": "Siguiente nivel",
     "tryAgain": "Intentar otra vez",
@@ -43,6 +44,9 @@
     "paragraph1": "Escribe las palabras en el orden correcto",
     "inputText": "Agrega una palabra",
     "editAnswer": "Editar respuesta"
+  },
+  "homePage": {
+    "paragraph1": "Escribe texto como 'Movies' o 'Countries'"
   },
   "footerText": "Desarrollado por"
 }

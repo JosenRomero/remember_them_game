@@ -47,11 +47,11 @@ export const getIAData = async (input) => {
     body: JSON.stringify(data)
   }
   
-  const response = await fetch(IA_API_URL, options).then(res => res.json())
+  const { generations } = await fetch(IA_API_URL, options).then(res => res.json())
 
-  const { text } = response.generations[0]
+  if(!generations) return Promise.resolve([])
 
-  return text
+  return generations[0].text
     .replaceAll("'", "")
     .split(",")
     

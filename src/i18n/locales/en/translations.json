@@ -1,6 +1,7 @@
 {
   "buttons": {
     "play": "Play",
+    "GenerateAndPlay": "Generate and Play",
     "home": "Home",
     "nextLevel": "Next Level",
     "tryAgain": "Try Again",
@@ -43,6 +44,9 @@
     "paragraph1": "Write the words in the correct order",
     "inputText": "Add a word",
     "editAnswer": "Edit answer"
+  },
+  "homePage": {
+    "paragraph1": "Write text such as 'Movies' or 'Countries'"
   },
   "footerText": "Developed by"
 }
