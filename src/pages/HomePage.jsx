@@ -13,7 +13,7 @@ const HomePage = () => {
     <>
       <div className={`h-full grid ${mode === 'iaMode' ? 'content-center' : 'place-content-center'} `}>
         { mode === 'iaMode'
-          ? <WordInput buttonText={ t('buttons.GenerateAndPlay')} paragraph1={ t('homePage.paragraph1') } />
+          ? <WordInput buttonText={ t('buttons.GenerateAndPlay')} paragraph1={ t('homePage.paragraph1') } errorText={ t('homePage.errorText') } />
           : <Link className="bg-sky-500 hover:bg-sky-700 px-5 py-2 rounded-xl font-semibold text-white hover:text-white" to={"/play"}>{ t('buttons.play')}</Link>
         }
       </div>

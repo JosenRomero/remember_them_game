@@ -46,7 +46,8 @@
     "editAnswer": "Editar respuesta"
   },
   "homePage": {
-    "paragraph1": "Escribe texto como 'Movies' o 'Countries'"
+    "paragraph1": "Escribe texto como 'Movies' o 'Countries'",
+    "errorText": "Ha ocurrido un error. Por favor intente otra vez."
   },
   "footerText": "Desarrollado por"
 }
