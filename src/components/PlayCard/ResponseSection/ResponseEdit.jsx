@@ -29,7 +29,7 @@ const ResponseEdit = ({ isOpenModal, closeModal, oneResponse, updateResponse, cl
           type="text"
           onChange={(e) => setResponseModificated(e.target.value)}
           value={responseModificated}
-          className="bg-white border text-gray-700 rounded py-2 px-3 w-3/4 shadow"
+          className="bg-white dark:bg-gray-700 border dark:border-gray-600 text-gray-700 dark:text-white dark:placeholder-gray-400 rounded py-2 px-3 w-3/4 shadow"
         />
       </div>
       <div className="flex justify-center gap-4 mt-5">
