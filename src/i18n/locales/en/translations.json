@@ -30,6 +30,7 @@
   "settings": {
     "title": "Settings",
     "selectLanguage": "Select language",
+    "darkTheme": "Dark theme",
     "gameMode": "Game mode",
     "messages": {
       "animeMode_msg": "* Not all anime names are in English, e.g. Kimetsu no Yaiba"
